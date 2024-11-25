@@ -17,6 +17,7 @@ app = FastAPI(
 
 @app.get("/api/v1/gigachat/")
 async def root(message: str):
+    print(message, '!'*100)
     access_token = GigaChatAuth(GIGA_CHAT_TOKEN).get_access_token()
 
     answer = GigaChatDriver(access_token).get_answer(message)

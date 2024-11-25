@@ -23,7 +23,7 @@ class GigaChatDriver:
             "messages": [
                 {
                     "role": "user",
-                    "content": "",
+                    "content": "Привет! Расскажи о себе.",
                 }
             ],
             "temperature": 1,
@@ -52,9 +52,10 @@ class GigaChatDriver:
                 "POST",
                 self.url,
                 headers=self.headers,
-                data=json.dumps(self.payload),
+                data=json.dumps(payload),
                 verify=False,
             )
+            print(response.json())
             return (
                 None
                 if response.status_code != HTTPStatus.OK
