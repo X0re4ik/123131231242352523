@@ -8,7 +8,11 @@ from src.gigachat.driver import GigaChatDriver
 
 GIGA_CHAT_TOKEN = "YWUxMzc0OTMtNGU0Mi00NTJjLWJlNGUtYjE4MTAyYTJkOTVkOjNlY2FiMzFmLWI2ZjEtNDdlNy04ZTZlLTNlODZmOTVhN2ZjNQ=="
 
-app = FastAPI()
+app = FastAPI(
+    docs_url="/api/v1/gigachat/doc",
+    openapi_url="/api/v1/gigachat/openapi.json",
+    redoc_url=None
+)
 
 
 @app.get("/api/v1/gigachat/")
